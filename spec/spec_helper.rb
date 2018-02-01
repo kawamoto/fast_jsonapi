@@ -10,6 +10,7 @@ RSpec.configure do |config|
   config.include RSpec::Benchmark::Matchers
 end
 
+Oj.optimize_rails()
 ActiveModel::Serializer.config.adapter = :json_api
 ActiveModel::Serializer.config.key_transform = :underscore
 ActiveModelSerializers.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new('/dev/null'))
